@@ -1,12 +1,12 @@
 const items = [
-  { name: "Burger", price: 300, image: "images/burger.jpg" },
-  { name: "Shawarma", price: 250, image: "images/shawarma.jpg" },
-  { name: "Zinger", price: 350, image: "images/zinger.jpg" },
-  { name: "Fries", price: 150, image: "images/fries.jpg" },
-  { name: "Burger", price: 300, image: "images/burger.jpg" },
-  { name: "Shawarma", price: 250, image: "images/shawarma.jpg" },
-  { name: "Zinger", price: 350, image: "images/zinger.jpg" },
-  { name: "Fries", price: 150, image: "images/fries.jpg" },
+  { name: "Burger", price: 300, image: "itemimages/burger.jpg" },
+  { name: "Shawarma", price: 250, image: "itemimages/shawarma.jpg" },
+  { name: "Zinger", price: 350, image: "itemimages/zinger.jpg" },
+  { name: "Fries", price: 150, image: "itemimages/fries.jpg" },
+  { name: "Burger", price: 300, image: "itemimages/burger.jpg" },
+  { name: "Shawarma", price: 250, image: "itemimages/shawarma.jpg" },
+  { name: "Zinger", price: 350, image: "itemimages/zinger.jpg" },
+  { name: "Fries", price: 150, image: "itemimages/fries.jpg" },
 ];
 
 const phone = "923137164393"; // WhatsApp number (no + or 0 at start)
