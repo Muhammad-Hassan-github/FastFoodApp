@@ -95,39 +95,3 @@ document.getElementById("orderBtn").addEventListener("click", () => {
 
 renderItems();
 updateTotal();
-
-// for installation code 
-
-let deferredPrompt;
-
-window.addEventListener('beforeinstallprompt', (e) => {
-  // Stop the browser from showing the default prompt
-  e.preventDefault();
-  deferredPrompt = e;
-
-  // Show the install button
-  const installBtn = document.getElementById('installBtn');
-  installBtn.style.display = 'inline-block';
-
-  installBtn.addEventListener('click', () => {
-    // Show the prompt
-    deferredPrompt.prompt();
-
-    // Wait for user's response
-    deferredPrompt.userChoice.then((choiceResult) => {
-      if (choiceResult.outcome === 'accepted') {
-        console.log('✅ User accepted the install prompt');
-      } else {
-        console.log('❌ User dismissed the install prompt');
-      }
-      deferredPrompt = null;
-    });
-  });
-});
-
-
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('sw.js').then(() => {
-    console.log('✅ Service Worker Registered');
-  });
-}
