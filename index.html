@@ -1,3 +1,5 @@
+</body>
+</html>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,15 +8,17 @@
   <title>Fast Food Order</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="manifest" href="manifest.json" />
-  <link rel="icon" href="icons/icon-192.png" />
 </head>
 <body>
-  <h1>🍔 Rizwan Food Menu</h1>
-  <div id="menu">
-    <!-- Items added by JS -->
+  <div class="container">
+    <h1>🍔 Fast Food Order</h1>
+    <div id="items" class="items"></div>
+    <div class="total">
+      Total: <span id="totalPrice">Rs 0</span>
+    </div>
+    <button id="orderBtn">📲 🛒 Place Order via WhatsApp</button>
   </div>
-  <button onclick="sendOrder()">🛒 Order via WhatsApp</button>
 
-  <script src="script.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
