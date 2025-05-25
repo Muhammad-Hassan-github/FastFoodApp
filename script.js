@@ -48,7 +48,7 @@ function sendOrder() {
 
   message += `\nTotal: Rs.${total}`;
 
-  const phone = "923001234567"; // 🔁 Shopkeeper's number
+  const phone = "923137164393"; // 🔁 Shopkeeper's number
   const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
   window.open(url, "_blank");
 }
