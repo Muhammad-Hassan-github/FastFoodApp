@@ -1,18 +1,18 @@
 {
-  "name": "Fast Food Order",
-  "short_name": "FoodOrder",
-  "start_url": "index.html",
+  "name": "Fast Food App",
+  "short_name": "FoodApp",
+  "start_url": ".",
   "display": "standalone",
-  "background_color": "#fff8f2",
-  "theme_color": "#d35400",
+  "background_color": "#ffffff",
+  "theme_color": "#ff0000",
   "icons": [
     {
-      "src": "icon-192.png",
+      "src": "icon/icon-192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "icon-512.png",
+      "src": "icon/icon-512.png",
       "sizes": "512x512",
       "type": "image/png"
     }
