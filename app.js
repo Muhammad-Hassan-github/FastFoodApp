@@ -9,7 +9,7 @@ const items = [
   { name: "Fries", price: 150, image: "itemimages/fries.jpg" },
 ];
 
-const phone = "923137164393"; // WhatsApp number (no + or 0 at start)
+const phone = "923058201224"; // WhatsApp number (no + or 0 at start)
 
 const itemsDiv = document.getElementById("items");
 const totalPriceSpan = document.getElementById("totalPrice");
