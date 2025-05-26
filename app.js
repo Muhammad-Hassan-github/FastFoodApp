@@ -95,3 +95,31 @@ document.getElementById("orderBtn").addEventListener("click", () => {
 
 renderItems();
 updateTotal();
+
+let deferredPrompt;
+
+window.addEventListener('beforeinstallprompt', (e) => {
+  // Prevent automatic prompt
+  e.preventDefault();
+  deferredPrompt = e;
+
+  // Show install button
+  const installBtn = document.getElementById('installBtn');
+  installBtn.style.display = 'inline-block';
+
+  installBtn.addEventListener('click', () => {
+    // Show prompt
+    deferredPrompt.prompt();
+
+    // Wait for user response
+    deferredPrompt.userChoice.then((choiceResult) => {
+      if (choiceResult.outcome === 'accepted') {
+        console.log('✅ User accepted the install prompt');
+        installBtn.style.display = 'none'; // Hide button after install
+      } else {
+        console.log('❌ User dismissed the install prompt');
+      }
+      deferredPrompt = null;
+    });
+  });
+});
