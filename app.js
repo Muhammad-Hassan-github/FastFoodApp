@@ -132,3 +132,13 @@ if ('serviceWorker' in navigator) {
       .catch(err => console.error('Service Worker registration failed:', err));
   });
 }
+
+
+window.addEventListener('beforeinstallprompt', (e) => {
+  // Prompt directly dikhayein
+  e.prompt();
+  // User ke response ka intezar
+  e.userChoice.then((choiceResult) => {
+    console.log(`User ne: ${choiceResult.outcome} choose kiya`);
+  });
+});
