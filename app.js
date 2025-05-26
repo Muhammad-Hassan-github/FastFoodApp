@@ -96,26 +96,26 @@ document.getElementById("orderBtn").addEventListener("click", () => {
 renderItems();
 updateTotal();
 
+
+
+
+
+
+// PWA Installation Prompt Handler
 let deferredPrompt;
+const installBtn = document.getElementById('installBtn');
 
 window.addEventListener('beforeinstallprompt', (e) => {
-  // Prevent automatic prompt
   e.preventDefault();
   deferredPrompt = e;
-
-  // Show install button
-  const installBtn = document.getElementById('installBtn');
   installBtn.style.display = 'inline-block';
 
   installBtn.addEventListener('click', () => {
-    // Show prompt
+    installBtn.style.display = 'none';
     deferredPrompt.prompt();
-
-    // Wait for user response
     deferredPrompt.userChoice.then((choiceResult) => {
       if (choiceResult.outcome === 'accepted') {
         console.log('✅ User accepted the install prompt');
-        installBtn.style.display = 'none'; // Hide button after install
       } else {
         console.log('❌ User dismissed the install prompt');
       }
@@ -123,3 +123,12 @@ window.addEventListener('beforeinstallprompt', (e) => {
     });
   });
 });
+
+
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js')
+      .then(reg => console.log('Service Worker registered.', reg))
+      .catch(err => console.error('Service Worker registration failed:', err));
+  });
+}
