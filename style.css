@@ -107,3 +107,22 @@ input[type="number"] {
   text-align: center;
   font-size: 16px;
 }
+
+#installBtn {
+  background: #d35400;
+  color: white;
+  font-size: 18px;
+  padding: 10px 20px;
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#installBtn:hover {
+  background-color: #e67e22;
+  transform: translateY(-2px);
+}
