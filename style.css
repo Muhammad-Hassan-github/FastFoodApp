@@ -129,7 +129,7 @@ input[type="number"] {
 
 
 #installBtn {
-  background: #d35400;
+  background: #007bff; /* Bootstrap's primary blue */
   color: white;
   font-size: 18px;
   font-weight: bold;
@@ -139,13 +139,13 @@ input[type="number"] {
   border-radius: 8px;
   cursor: pointer;
   margin: 20px 0;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s ease, transform 0.2s ease;
   text-align: center;
   line-height: 1.5;
 }
 
 #installBtn:hover {
-  background-color: #e67e22;
+  background-color: #0056b3; /* darker blue on hover */
   transform: translateY(-2px);
 }
