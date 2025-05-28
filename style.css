@@ -131,9 +131,9 @@ input[type="number"] {
 #installBtn {
   background: #d35400;
   color: white;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bold;
-  padding: 12px 24px;
+  padding: 12px 20px;
   width: 100%;
   border: none;
   border-radius: 8px;
@@ -142,6 +142,7 @@ input[type="number"] {
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   transition: background-color 0.3s ease, transform 0.2s ease;
   text-align: center;
+  line-height: 1.5;
 }
 
 #installBtn:hover {
