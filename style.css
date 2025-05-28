@@ -108,7 +108,7 @@ input[type="number"] {
   font-size: 16px;
 }
 
-#installBtn {
+/* #installBtn {
   background: #d35400;
   color: white;
   font-size: 18px;
@@ -120,6 +120,28 @@ input[type="number"] {
   margin-bottom: 20px;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#installBtn:hover {
+  background-color: #e67e22;
+  transform: translateY(-2px);
+} */
+
+
+#installBtn {
+  background: #d35400;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 12px 24px;
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 20px 0;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  text-align: center;
 }
 
 #installBtn:hover {
