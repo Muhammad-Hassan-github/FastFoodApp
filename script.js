@@ -1,6 +1,6 @@
 const items = [
-  { name: "Burger", price: 300 },
-  { name: "Pizza", price: 600 },
+  { name: "Burger", price: 100 },
+  { name: "Pizza", price: 1000 },
   { name: "Fries", price: 150 },
   { name: "Zinger", price: 400 },
 ];
