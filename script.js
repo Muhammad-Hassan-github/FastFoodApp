@@ -1,8 +1,8 @@
 const items = [
-  { name: "Burger", price: 100 },
-  { name: "Pizza", price: 1000 },
-  { name: "Fries", price: 150 },
-  { name: "Zinger", price: 400 },
+  { name: "Burger", price: 0 },
+  { name: "Pizza", price: 0 },
+  { name: "Fries", price: 0 },
+  { name: "Zinger", price: 0 },
 ];
 
 const menuDiv = document.getElementById("menu");
