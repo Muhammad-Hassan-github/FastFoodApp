@@ -1,4 +1,4 @@
-const CACHE_NAME = 'app-cache-v4'; // 👈 must change every update
+const CACHE_NAME = 'app-cache-v90'; // 👈 must change every update
 const urlsToCache = [
   '/',
   '/index.html',
