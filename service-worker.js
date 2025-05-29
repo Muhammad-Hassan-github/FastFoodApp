@@ -1,6 +1,6 @@
 // service-worker.js
 
-const CACHE_NAME = 'app-cache-v2'; // Change version on each update
+const CACHE_NAME = 'app-cache-v3'; // Change version on each update
 const urlsToCache = [
   '/',
   '/index.html',

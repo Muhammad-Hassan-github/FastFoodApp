@@ -53,14 +53,7 @@ function sendOrder() {
   window.open(url, "_blank");
 }
 
-// Register service worker
-if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.register("service-worker.js");
-}
-
-
-
-// script.js ke end par
+// ✅ Proper service worker registration with update + reload
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
     navigator.serviceWorker.register('/service-worker.js').then(registration => {
