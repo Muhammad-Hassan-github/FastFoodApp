@@ -1,16 +1,19 @@
-const CACHE_NAME = 'app-cache-v8'; // 🔁 Change on every update
+// service-worker.js
+
+const CACHE_NAME = 'app-cache-v8'; // Change version on each update
 const urlsToCache = [
   '/',
   '/index.html',
   '/style.css',
   '/script.js',
+  // Add other assets
 ];
 
 self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE_NAME).then(cache => cache.addAll(urlsToCache))
   );
-  self.skipWaiting(); // Force activation
+  self.skipWaiting(); // Activate immediately
 });
 
 self.addEventListener('activate', event => {
@@ -23,13 +26,9 @@ self.addEventListener('activate', event => {
           }
         })
       )
-    ).then(() => self.clients.claim())
-     .then(() => {
-       return self.clients.matchAll().then(clients => {
-         clients.forEach(client => client.navigate(client.url)); // 🔁 Force refresh
-       });
-     })
+    )
   );
+  self.clients.claim(); // Take control of all tabs
 });
 
 self.addEventListener('fetch', event => {
