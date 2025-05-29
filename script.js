@@ -59,3 +59,26 @@ if ("serviceWorker" in navigator) {
 }
 
 
+
+// script.js ke end par
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/service-worker.js').then(registration => {
+      registration.update();
+
+      registration.onupdatefound = () => {
+        const newWorker = registration.installing;
+        newWorker.onstatechange = () => {
+          if (newWorker.state === 'installed') {
+            if (navigator.serviceWorker.controller) {
+              // Auto-refresh when update is ready
+              window.location.reload();
+            }
+          }
+        };
+      };
+    }).catch(error => {
+      console.error('Service worker registration failed:', error);
+    });
+  });
+}
