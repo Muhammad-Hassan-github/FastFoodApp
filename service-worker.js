@@ -1,14 +1,38 @@
-// Version: v2 - force update due to phone number change
-self.addEventListener("install", e => {
-  console.log("Service Worker Installed - v2");
+// service-worker.js
+
+const CACHE_NAME = 'app-cache-v2'; // Change version on each update
+const urlsToCache = [
+  '/',
+  '/index.html',
+  '/style.css',
+  '/script.js',
+  // Add other assets
+];
+
+self.addEventListener('install', event => {
+  event.waitUntil(
+    caches.open(CACHE_NAME).then(cache => cache.addAll(urlsToCache))
+  );
+  self.skipWaiting(); // Activate immediately
 });
 
-self.addEventListener("activate", e => {
-  console.log("Service Worker Activated");
+self.addEventListener('activate', event => {
+  event.waitUntil(
+    caches.keys().then(cacheNames =>
+      Promise.all(
+        cacheNames.map(name => {
+          if (name !== CACHE_NAME) {
+            return caches.delete(name);
+          }
+        })
+      )
+    )
+  );
+  self.clients.claim(); // Take control of all tabs
 });
 
-self.addEventListener("fetch", function (event) {
-  // No caching yet
+self.addEventListener('fetch', event => {
+  event.respondWith(
+    caches.match(event.request).then(response => response || fetch(event.request))
+  );
 });
-
-
