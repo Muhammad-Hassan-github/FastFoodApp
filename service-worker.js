@@ -1,38 +1,44 @@
-// service-worker.js
-
-const CACHE_NAME = 'app-cache-v8'; // Change version on each update
+const CACHE_NAME = 'app-cache-v4'; // 👈 must change every update
 const urlsToCache = [
   '/',
   '/index.html',
   '/style.css',
-  '/script.js',
-  // Add other assets
+  '/script.js'
 ];
 
 self.addEventListener('install', event => {
+  self.skipWaiting(); // install & activate immediately
   event.waitUntil(
     caches.open(CACHE_NAME).then(cache => cache.addAll(urlsToCache))
   );
-  self.skipWaiting(); // Activate immediately
 });
 
 self.addEventListener('activate', event => {
   event.waitUntil(
-    caches.keys().then(cacheNames =>
+    caches.keys().then(keys =>
       Promise.all(
-        cacheNames.map(name => {
-          if (name !== CACHE_NAME) {
-            return caches.delete(name);
+        keys.map(key => {
+          if (key !== CACHE_NAME) {
+            return caches.delete(key);
           }
         })
       )
-    )
+    ).then(() => self.clients.claim())
+     .then(() => {
+       return self.clients.matchAll().then(clients => {
+         clients.forEach(client => client.navigate(client.url)); // auto refresh
+       });
+     })
   );
-  self.clients.claim(); // Take control of all tabs
 });
 
 self.addEventListener('fetch', event => {
   event.respondWith(
-    caches.match(event.request).then(response => response || fetch(event.request))
+    fetch(event.request).then(response => {
+      return caches.open(CACHE_NAME).then(cache => {
+        cache.put(event.request, response.clone());
+        return response;
+      });
+    }).catch(() => caches.match(event.request))
   );
 });
