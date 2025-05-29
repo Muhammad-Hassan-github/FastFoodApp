@@ -1,6 +1,6 @@
 const items = [
-  { name: "Burger", price: 300, image: "itemimages/burger.jpg" },
-  { name: "Shawarma", price: 250, image: "itemimages/shawarma.jpg" },
+  { name: "Burger", price: 100, image: "itemimages/burger.jpg" },
+  { name: "Shawarma", price: 150, image: "itemimages/shawarma.jpg" },
   { name: "Zinger", price: 350, image: "itemimages/zinger.jpg" },
   { name: "Fries", price: 150, image: "itemimages/fries.jpg" },
   { name: "Burger", price: 300, image: "itemimages/burger.jpg" },
