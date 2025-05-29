@@ -1,4 +1,4 @@
-const CACHE_NAME = 'app-cache-v7'; // 🔁 Change on every update
+const CACHE_NAME = 'app-cache-v8'; // 🔁 Change on every update
 const urlsToCache = [
   '/',
   '/index.html',
